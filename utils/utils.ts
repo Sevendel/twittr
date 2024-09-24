@@ -135,3 +135,19 @@ export const formatTime = (value: number) => {
     return `${value % 12}pm`;
   }
 };
+
+export interface DelSelectedCell {
+  content?: string;
+  day_id?: number;
+  day?: string;
+  time_id?: number;
+  time?: string;
+  minutes?: number;
+}
+export interface SelectedCell {
+  day_id?: number;
+  day?: string;
+  time_id?: number;
+  time?: string;
+  minutes?: number;
+}

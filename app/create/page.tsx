@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import {
   Content,
+  DelSelectedCell,
+  SelectedCell,
   availableSchedule,
   formatTime,
   tableHeadings,
@@ -10,15 +12,40 @@ import {
 import { FaClock } from "react-icons/fa6";
 import Handle from "../components/UserHandle";
 
+
+
 const Dashboard = () => {
   const [yourSchedule, updateYourSchedule] = useState(availableSchedule);
 
-  //👇🏻 add scheduled post
-  const handleAddPost = (id: number, time: number) => {
-    console.log({ id, time });
-  };
+  const [selectedCell, setSelectedCell] = useState<SelectedCell>({
+    day_id: 0,
+    day: "",
+    time_id: 0,
+    time: "",
+  });
+  const [delSelectedCell, setDelSelectedCell] = useState<DelSelectedCell>({
+    content: "",
+    day_id: 0,
+    day: "",
+    time_id: 0,
+    time: "",
+    minutes: 0,
+  });
+  //👇🏻 triggers the add post modal
+  const [addPostModal, setAddPostModal] = useState(false);
+  //👇🏻 triggers the delete post modal
+  const [deletePostModal, setDeletePostModal] = useState(false);
 
-  //👇🏻 delete scheduled post
+  const handleAddPost = (id: number, time: number) => {
+    setSelectedCell({
+      day_id: id + 1,
+      day: tableHeadings[id + 1],
+      time_id: time,
+      time: formatTime(time),
+    });
+    setAddPostModal(true);
+  };
+  
   const handleDeletePost = (
     e: React.MouseEvent<HTMLParagraphElement>,
     content: Content,
@@ -26,9 +53,18 @@ const Dashboard = () => {
   ) => {
     e.stopPropagation();
     if (content.day !== undefined) {
-      console.log({ time, content });
+      setDelSelectedCell({
+        content: content.content,
+        day_id: content.day,
+        day: tableHeadings[content.day],
+        time_id: time,
+        time: formatTime(time),
+        minutes: content.minutes,
+      });
+      setDeletePostModal(true);
     }
-  };
+  };  
+  
 
   return (
     <main className="min-h-screen w-full">
