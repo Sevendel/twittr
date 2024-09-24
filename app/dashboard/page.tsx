@@ -2,7 +2,8 @@
 "use client";
 import { useState } from "react";
 // import { useSession } from "next-auth/react";
-import { signOut } from "next-auth/react";
+// import { getSession } from "next-auth/react";
+// import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Photo from "@/public/blockchain.jpg";
 import { FaRegComment, FaRegBookmark } from "react-icons/fa";
@@ -10,11 +11,17 @@ import { FaRetweet } from "react-icons/fa6";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoStatsChartOutline } from "react-icons/io5";
 import { RiShare2Line } from "react-icons/ri";
+import Logout from "../components/Logout";
 
 export default function Dashboard() {
-  // const { data: session } = useSession
+  // const { data: session } = useSession();
+
   const [tweet, setTweet] = useState("");
   const [scheduledTime, setScheduledTime] = useState("");
+
+  // if (!session) {
+  //   return <p>Loading...</p>;
+  // }
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -96,13 +103,30 @@ export default function Dashboard() {
       </section>
 
       <div className="px-10 flex fixed bottom-5">
-        <button
+        {/* <button
           onClick={() => signOut()}
           className="mt-5 border border-red-500 hover:bg-red-500 hover:text-white py-2 px-4 rounded text-base hover:text-lg"
         >
           Logout
-        </button>
+        </button> */}
+        <Logout />
       </div>
     </>
   );
 }
+
+// export async function getServerSideProps(context: any) {
+//   const session = await getSession(context);
+
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: '/',
+//         permanent: false,
+//       },
+//     };
+//   }
+
+//   return {
+//     props: { session },
+//   }};
