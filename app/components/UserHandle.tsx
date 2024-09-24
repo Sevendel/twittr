@@ -10,4 +10,3 @@ const Handle = async () => {
 };
 
 export default Handle;
-

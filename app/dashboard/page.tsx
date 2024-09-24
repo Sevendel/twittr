@@ -3,7 +3,6 @@ import Logout from "../components/Logout";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
-
 const Dashboard = async () => {
   const session = await auth();
 
