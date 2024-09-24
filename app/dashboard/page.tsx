@@ -1,9 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useState } from "react";
-// import { useSession } from "next-auth/react";
-// import { getSession } from "next-auth/react";
-// import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Photo from "@/public/blockchain.jpg";
 import { FaRegComment, FaRegBookmark } from "react-icons/fa";
@@ -14,7 +11,6 @@ import { RiShare2Line } from "react-icons/ri";
 import Logout from "../components/Logout";
 
 export default function Dashboard() {
-  // const { data: session } = useSession();
 
   const [tweet, setTweet] = useState("");
   const [scheduledTime, setScheduledTime] = useState("");
@@ -37,7 +33,6 @@ export default function Dashboard() {
   return (
     <>
       <div className="px-10 my-10">
-        {/* <p>Welcome, {session.user.name}</p> */}
         <p className="text-4xl font-medium">Welcome, User</p>
       </div>
 
@@ -114,19 +109,3 @@ export default function Dashboard() {
     </>
   );
 }
-
-// export async function getServerSideProps(context: any) {
-//   const session = await getSession(context);
-
-//   if (!session) {
-//     return {
-//       redirect: {
-//         destination: '/',
-//         permanent: false,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: { session },
-//   }};
