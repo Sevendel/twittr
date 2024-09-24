@@ -1,18 +1,28 @@
+import Form from "../components/TweetForm";
 import Logout from "../components/Logout";
-import TweetForm from "../components/tweetForm";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
-export default function Dashboard() {
+
+const Dashboard = async () => {
+  const session = await auth();
+
+  if (!session?.user) redirect("/");
+
   return (
     <>
       <div className="px-10 my-10">
-        <p className="text-4xl font-medium">Welcome, User</p>
+        <p className="text-4xl font-medium"> Welcome, {session?.user?.name}</p>
       </div>
-
-      <TweetForm />
+      <div className="">
+        <Form />
+      </div>
 
       <div className="px-10 flex fixed bottom-5">
         <Logout />
       </div>
     </>
   );
-}
+};
+
+export default Dashboard;
