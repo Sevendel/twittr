@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Form from "../components/TweetForm";
 import Logout from "../components/Logout";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+  title: "Create Twitter Post",
+  description: "Create a scheduled Twitter post"
+}
 
 const Dashboard = async () => {
   const session = await auth();
