@@ -13,7 +13,10 @@ export default function Homet() {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen font-geistMono">
-        <h1 className="text-xl md:text-2xl mb-5 font-bold font-geistSans">
+      <h1 className="text-xl md:text-3xl mb-5 font-bold font-geistSans">
+          Hoster | Social Media Scheduler
+        </h1>
+        <h1 className="text-lg md:text-xl mb-5 font-bold font-geistSans">
           Choose a platform to connect to:
         </h1>
         <div className="flex gap-x-5">
@@ -21,18 +24,18 @@ export default function Homet() {
               <button
                 name="action"
                 value="twitter"
-                className="py-8 w-40 gap-y-3 hover:border-amber-500 border flex flex-col justify-center items-center"
+                className="py-4 w-36 text-xs lg:text-sm lg:py-5 lg:w-40 gap-y-3 hover:border-amber-500 border flex flex-col justify-center items-center"
               >
-                <FaXTwitter size={40} />
+                <FaXTwitter className="w-6 h-6 lg:w-10 lg:h-10" />
                 <span>Post</span>
               </button>
             </form>
 
           <button
             onClick={handleClick}
-            className="py-8 w-40 gap-y-3 hover:border-amber-500 border flex flex-col justify-center items-center"
+            className="py-4 w-36 text-xs lg:text-sm lg:py-5 lg:w-40 gap-y-3 hover:border-amber-500 border flex flex-col justify-center items-center"
           >
-            <SiFacebook size={40} />
+            <SiFacebook className="w-6 h-6 lg:w-10 lg:h-10" />
             <span>Page / Group</span>
           </button>
         </div>

@@ -23,7 +23,7 @@ export default function Form() {
     } catch (error) {
       // alert("Tweet not sent!");
       // console.error(error);
-      setError("Tweet not sent!");
+      setError(`Tweet not sent. Try again! ${error}`);
     }
     setTimeout(() => {
       setError("");
