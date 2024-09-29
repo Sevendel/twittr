@@ -15,7 +15,7 @@ export default function Form() {
     e.preventDefault();
     try {
       // const response = await axios.post("/api/tweets", { tweet });
-      await axios.post("/api/tweets", { tweet });
+      await axios.post("/api/tweets", { tweet }); 
       // alert("Tweet sent!");
       // console.log(response.data);
       setSuccess("Tweet sent!");
