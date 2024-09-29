@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "@/public/logo.svg";
+import Logo from "@/public/icon.svg";
 import { FaHome } from "react-icons/fa";
 import { FaPen } from "react-icons/fa6";
 import { MdAccessTimeFilled } from "react-icons/md";
@@ -23,7 +23,7 @@ export default function Navbar() {
         <ul className="flex space-x-6 lg:space-x-10">
           <Link
             href="/overview"
-            className="flex space-x-2 items-center border border-slate-600 hover:bg-amber-800 py-1 px-2 rounded-md  text-sm"
+            className="flex space-x-2 items-center border border-slate-600 hover:border-amber-800 hover:bg-amber-800 py-1 px-2 rounded-md  text-sm"
           >
             <FaHome />
             <li className="hidden lg:block">Overview</li>
@@ -31,7 +31,7 @@ export default function Navbar() {
 
           <Link
             href="/scheduled-posts"
-            className="flex space-x-2 items-center border border-slate-600 hover:bg-amber-800 py-1 px-2 rounded-md  text-sm"
+            className="flex space-x-2 items-center border border-slate-600 hover:border-amber-800 hover:bg-amber-800 py-1 px-2 rounded-md  text-sm"
           >
             <MdAccessTimeFilled />
             <li className="hidden lg:block">Scheduled Posts</li>
@@ -39,7 +39,7 @@ export default function Navbar() {
 
           <Link
             href="/tweet"
-            className="flex space-x-2 items-center border border-slate-600 hover:bg-amber-800 py-1 px-2 rounded-md  text-sm"
+            className="flex space-x-2 items-center border border-slate-600 hover:border-amber-800 hover:bg-amber-800 py-1 px-2 rounded-md  text-sm"
           >
             <FaPen />
             <li className="hidden lg:block">Create</li>
