@@ -3,74 +3,33 @@
 import { useState } from "react";
 import Preview from "./TweetPreview";
 import { FaXTwitter } from "react-icons/fa6";
+import axios from "axios";
 
 export default function Form() {
   const [tweet, setTweet] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  // const handleSubmit = async (e: { preventDefault: () => void }) => {
-  //   e.preventDefault();
-  //   setError("");
-  //   setSuccess("");
 
-  //   try {
-  //     const response = await fetch("/api/tweets", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ tweet }),
-  //     });
-
-  //     if (response.ok) {
-  //       setSuccess("Tweet successfully posted!");
-  //       setTweet("");
-  //     } else {
-  //       setError("Failed to post tweet");
-  //     }
-  //   } catch (error) {
-  //     setError("An unexpected error occurred. Please try again.");
-  //   }
-
-  //   setTimeout(() => {
-  //     setError("");
-  //     setSuccess("");
-  //   }, 1000);
-  // };
-
-
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setError("");
-  setSuccess("");
-
-  try {
-    const response = await fetch("/api/tweets", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ tweet }),
-    });
-
-    if (response.ok) {
-      setSuccess("Tweet successfully posted!");
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      // const response = await axios.post("/api/tweets", { tweet });
+      await axios.post("/api/tweets", { tweet });
+      // alert("Tweet sent!");
+      // console.log(response.data);
+      setSuccess("Tweet sent!");
       setTweet("");
-    } else {
-      const errorMessage = await response.text();
-      setError(`Failed to post tweet: ${errorMessage}`);
+    } catch (error) {
+      // alert("Tweet not sent!");
+      // console.error(error);
+      setError("Tweet not sent!");
     }
-  } catch (error) {
-    console.error(error);
-    setError("An unexpected error occurred. Please try again.");
-  }
-
-  setTimeout(() => {
-    setError("");
-    setSuccess("");
-  }, 3000);
-};
+    setTimeout(() => {
+      setError("");
+      setSuccess("");
+    }, 3000);
+  };
 
   return (
     <section className="px-10 flex flex-col md:flex-row gap-y-5 md:gap-0 md:items-center justify-between">
