@@ -1,7 +1,7 @@
 "use client";
 import { doTwitterLogin } from "@/app/actions";
 import Image from "next/image";
-import Logo from "@/public/icon.svg";
+import Logo from "@/public/logo-blue.svg";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiFacebook } from "react-icons/si";
 
@@ -35,15 +35,15 @@ export default function Homet() {
             <button
               name="action"
               value="twitter"
-              className="py-4 w-36 text-xs lg:text-sm lg:py-5 lg:w-40 gap-y-3 hover:border-amber-500 border border-slate-700 flex flex-col justify-center items-center"
+              className="py-4 w-36 text-xs lg:text-sm lg:py-5 lg:w-40 gap-y-3 hover:border-blue-500 border border-slate-700 flex flex-col justify-center items-center"
             >
               <FaXTwitter className="w-6 h-6 lg:w-10 lg:h-10" />
               <span>Post</span>
             </button>
           </form>
 
-          <button className="relative overflow-hidden py-4 w-36 text-xs lg:text-sm lg:py-5 lg:w-40 gap-y-3 hover:border-amber-500 border border-slate-700 flex flex-col justify-center items-center">
-            <span className="absolute top-0 right-0 px-5 py-1 text-xs tracking-wider text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 dark:bg-amber-900">
+          <button className="relative overflow-hidden py-4 w-36 text-xs lg:text-sm lg:py-5 lg:w-40 gap-y-3 hover:border-blue-500 border border-slate-700 flex flex-col justify-center items-center">
+            <span className="absolute top-0 right-0 px-5 py-1 text-xs tracking-wider text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 dark:bg-blue-900">
               Soon
             </span>
             <SiFacebook className="w-6 h-6 lg:w-10 lg:h-10" />

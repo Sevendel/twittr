@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
 import Form from "../components/TweetForm";
 import Logout from "../components/Logout";
@@ -10,14 +11,15 @@ export const metadata: Metadata = {
 }
 
 const Dashboard = async () => {
-  const session = await auth();
+  // const session = await auth();
 
-  if (!session?.user) redirect("/");
+  // if (!session?.user) redirect("/");
+  // {session?.user?.name}
 
   return (
-    <>
-      <div className="px-10 my-10">
-        <p className="text-4xl font-medium"> Welcome, {session?.user?.name}</p>
+    <main className="pt-24">
+      <div className="px-10">
+        {/* <p className="text-4xl font-medium"> Welcome, user</p> */}
       </div>
       <div className="">
         <Form />
@@ -26,7 +28,7 @@ const Dashboard = async () => {
       <div className="px-10 flex fixed bottom-5">
         <Logout />
       </div>
-    </>
+    </main>
   );
 };
 
