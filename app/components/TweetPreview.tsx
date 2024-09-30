@@ -14,7 +14,7 @@ import Handle from "./UserHandle";
 export default function Preview({ tweet }: { tweet: string }) {
   return (
     <>
-      <div className="p-4 w-full md:w-[590px] bg-[#000] border">
+      <div className="p-4 w-full md:w-[590px] bg-[#000] border border-slate-600">
         <div className="flex items-start">
           {/* <div className="w-12 h-12 bg-blue-700 rounded-full mr-3"></div> */}
           <Image src={Photo} alt="" className="w-12 h-12 mr-3 rounded-full" />

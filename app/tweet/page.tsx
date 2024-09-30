@@ -6,7 +6,7 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Create Twitter Post",
+  title: "Schedule Twitter Post",
   description: "Create a scheduled Twitter post"
 }
 

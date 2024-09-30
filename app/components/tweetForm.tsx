@@ -38,7 +38,7 @@ export default function Form() {
             className="font-geistMono text-sm border border-slate-700 hover:bg-blue-800 hover:border-blue-800 py-1 px-2 rounded flex items-center gap-2"
           >
             <FaPen />
-            Create
+            Write
           </button>
         ) : (
           <button
@@ -85,8 +85,8 @@ export default function Form() {
             </div>
           </form>
 
-          {error && <p className="text-red-500">{error}</p>}
-          {success && <p className="text-green-500">{success}</p>}
+          {error && <p className="text-red-500 mt-3">{error}</p>}
+          {success && <p className="text-green-500 mt-3">{success}</p>}
         </section>
       ) : (
         // Preview component
