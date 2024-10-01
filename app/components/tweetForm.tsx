@@ -17,7 +17,7 @@ export default function Form() {
     e.preventDefault();
     try {
       // const response = await axios.post("/api/tweets", { tweet });
-      await axios.post("/api/schedule-tweets", { tweet, scheduledTime });
+      await axios.post("/api/tweets", { tweet, scheduledTime });
       setSuccess("Tweet sent!");
       setTweet("");
     } catch (error) {
