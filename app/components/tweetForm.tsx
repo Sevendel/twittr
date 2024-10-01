@@ -5,11 +5,11 @@ import Preview from "./TweetPreview";
 import { FaEye, FaPen, FaXTwitter } from "react-icons/fa6";
 import axios from "axios";
 
+
 export default function Form() {
   const [tweet, setTweet] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [newPost, setNewPost] = useState("");
   const [scheduledTime, setScheduledTime] = useState("");
   const [isPreview, setIsPreview] = useState(false);
 
@@ -17,7 +17,7 @@ export default function Form() {
     e.preventDefault();
     try {
       // const response = await axios.post("/api/tweets", { tweet });
-      await axios.post("/api/tweets", { tweet });
+      await axios.post("/api/schedule-tweets", { tweet, scheduledTime });
       setSuccess("Tweet sent!");
       setTweet("");
     } catch (error) {
@@ -72,6 +72,7 @@ export default function Form() {
                 value={scheduledTime}
                 onChange={(e) => setScheduledTime(e.target.value)}
                 name="scheduledTime"
+                required
               />
             </div>
             <div className="flex items-center justify-center">
@@ -80,7 +81,7 @@ export default function Form() {
                 className="font-geistMono flex gap-2 items-center bg-blue-500 hover:bg-blue-800 text-white py-2 px-6 rounded"
               >
                 <FaXTwitter />
-                Tweet
+                Schedule
               </button>
             </div>
           </form>

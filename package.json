@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "worker": "npx tsx --watch ./utils/tweetWorker.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.8",
     "axios": "^1.7.7",
+    "bullmq": "^5.14.0",
     "framer-motion": "^11.9.0",
+    "ioredis": "^5.4.1",
     "next": "14.2.13",
     "next-auth": "^5.0.0-beta.21",
     "react": "^18",
