@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import ScheduledPosts from '../components/ScheduledPosts';
  
 export const metadata: Metadata = {
-  title: 'My Scheduled Posts',
+  title: 'Hoster | Scheduled Posts',
+  description: 'All the posts scheduled by the user'
 };
 
 export default function Page() {
