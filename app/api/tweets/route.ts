@@ -9,7 +9,7 @@ const twitterClient = new TwitterApi({
 
 export async function POST(req: Request) {
   try {
-    const { tweet, scheduledTime} = await req.json();
+    const { tweet } = await req.json();
 
     if (!tweet || tweet.trim() === "") {
       return new Response(
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     }
 
     // Post the tweet using the Twitter API
-    await twitterClient.v2.tweet(tweet, scheduledTime);
+    await twitterClient.v2.tweet(tweet);
 
     return new Response(
       JSON.stringify({ message: "Tweet posted successfully!" }),

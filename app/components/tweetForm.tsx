@@ -17,7 +17,7 @@ export default function Form() {
     e.preventDefault();
     try {
       // const response = await axios.post("/api/tweets", { tweet });
-      await axios.post("/api/tweets", { tweet, scheduledTime });
+      await axios.post("/api/tweets", { tweet });
       setSuccess("Tweet sent!");
       setTweet("");
     } catch (error) {
@@ -80,7 +80,7 @@ export default function Form() {
                 type="submit"
                 className="font-geistMono flex gap-2 items-center bg-blue-500 hover:bg-blue-800 text-white py-2 px-6 rounded"
               >
-                <FaXTwitter />
+                {/* <FaXTwitter /> */}
                 Schedule
               </button>
             </div>
